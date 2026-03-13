@@ -6,7 +6,8 @@ import bodyParser from 'body-parser'
 
 import { pedidosRoutes } from './rutas/pedidos.js'
 import { usuarioRoutes } from './rutas/usuarios.js'
-
+import dotenv from 'dotenv';
+dotenv.config();
 // Crear la aplicación Express
 const app = express()
 // Configurar middlewares

@@ -105,7 +105,7 @@ export async function modificaPedido(
     comentario,
   },
 ) {
-  return await Pedido.findOneAndUpdate(
+  await Pedido.findOneAndUpdate(
     { _id: pedidoId },
     {
       $set: {
@@ -119,7 +119,7 @@ export async function modificaPedido(
         comentario,
       },
     },
-    { new: true },
+    { returnDocument: 'after' },
   );
 }
 /**

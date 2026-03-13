@@ -12,6 +12,8 @@ import mongoose, { Schema } from "mongoose";
  * @property {number} abono - Monto abonado al pedido
  * @property {string} comentario - Comentarios adicionales sobre el pedido
  */
+
+
 const pedidoSchema = new Schema(
   {
     nombre: { type: String, required: true },
@@ -22,6 +24,7 @@ const pedidoSchema = new Schema(
     pagado: [String],
     abono: { type: Number },
     comentario: { type: String },
+    cliente: { type: Schema.Types.ObjectId, ref: 'usuario'}
   },
   { timestamps: true },
 );

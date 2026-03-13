@@ -12,8 +12,12 @@ import { initBaseDeDatos } from './bd/init.js'
  */
 try {
   await initBaseDeDatos()
-  const PORT = process.env.PORT //|| 3001
-  app.listen(PORT)
+  //const PORT = process.env.PORT //|| 3001
+  // app.listen(PORT)
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+  console.log(`Servidor corriendo en puerto ${PORT}`);
+  });
   console.info(`Servidor Express ejecutandose sobre http://localhost:${PORT}`)
 } catch (err) {
   console.error('Error conecteando a la Base de Datos:', err)
